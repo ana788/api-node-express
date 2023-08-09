@@ -24,13 +24,18 @@
             "colId": "59cbc144-2406-442f-b1e9-61bd0cf7a6a3",
             "containerId": "",
             "name": "/user",
-            "url": "http://192.168.186.1:3000/user",
-            "method": "PUT",
+            "url": "http://192.168.186.1:3000/product",
+            "method": "POST",
             "sortNum": 20000,
             "created": "2023-08-09T00:21:18.438Z",
-            "modified": "2023-08-09T00:21:52.969Z",
+            "modified": "2023-08-09T01:19:01.531Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"produto A\",\n  \"peso\": \"56\",\n  \"altura\": \"30\"\n}",
+                "form": []
+            },
             "tests": []
         },
         {

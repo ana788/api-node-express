@@ -14,7 +14,12 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     //Create
-    res.json({message: "Usuário criado com sucesso"})
+    const dados = req.body
+    console.log(dados.nome)
+    res.json({
+        message: "Usuário criado com sucesso",
+        dados: dados
+    })
 })
 
 router.put('/', (req, res) => {
