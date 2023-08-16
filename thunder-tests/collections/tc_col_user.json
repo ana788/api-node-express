@@ -10,11 +10,11 @@
             "colId": "59cbc144-2406-442f-b1e9-61bd0cf7a6a3",
             "containerId": "",
             "name": "/user",
-            "url": "http://192.168.186.1:3000/user",
+            "url": "{{host}}/user/list",
             "method": "GET",
             "sortNum": 10000,
             "created": "2023-08-09T00:20:26.972Z",
-            "modified": "2023-08-09T00:20:26.972Z",
+            "modified": "2023-08-16T00:59:32.800Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -24,16 +24,16 @@
             "colId": "59cbc144-2406-442f-b1e9-61bd0cf7a6a3",
             "containerId": "",
             "name": "/user",
-            "url": "http://192.168.186.1:3000/product",
+            "url": "{{host}}/user",
             "method": "POST",
             "sortNum": 20000,
             "created": "2023-08-09T00:21:18.438Z",
-            "modified": "2023-08-09T01:19:01.531Z",
+            "modified": "2023-08-16T01:29:06.071Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nome\": \"produto A\",\n  \"peso\": \"56\",\n  \"altura\": \"30\"\n}",
+                "raw": "{\n  \"name\": \"olivia\",\n  \"email\": \"oliva@gmail.com\",\n  \"pass\": \"5045\"\n}",
                 "form": []
             },
             "tests": []
@@ -43,13 +43,18 @@
             "colId": "59cbc144-2406-442f-b1e9-61bd0cf7a6a3",
             "containerId": "",
             "name": "/user",
-            "url": "http://192.168.186.1:3000/user",
+            "url": "{{host}}/user",
             "method": "PUT",
             "sortNum": 30000,
             "created": "2023-08-09T00:22:48.575Z",
-            "modified": "2023-08-09T00:22:48.575Z",
+            "modified": "2023-08-16T00:19:00.286Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 56,\n  \"name\": \"Ana Paula\"\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -57,11 +62,11 @@
             "colId": "59cbc144-2406-442f-b1e9-61bd0cf7a6a3",
             "containerId": "",
             "name": "/user",
-            "url": "http://192.168.186.1:3000/user",
+            "url": "{{host}}/user",
             "method": "DELETE",
             "sortNum": 40000,
             "created": "2023-08-09T00:23:07.623Z",
-            "modified": "2023-08-09T00:23:07.623Z",
+            "modified": "2023-08-15T23:12:06.203Z",
             "headers": [],
             "params": [],
             "tests": []
