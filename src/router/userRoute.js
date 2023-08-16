@@ -1,35 +1,18 @@
 //para um conjunto de rotas de um recurso específico, é uma boa prática criar um arquivo separado para cada recurso.
 import express from "express";
+import listUsers from "../controllers/user/listUsers.js";
+import getUser from "../controllers/user/getUser.js";
+import createUser from '../controllers/user/createUser.js'
+import updateUser from "../controllers/user/updateUser.js";
+import deleteUser from "../controllers/user/deleteUser.js";
+
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    const users = [
-        {id: 1, name: "João"},
-        {id: 2, name: "Maria"},
-        {id: 3, name: "José"}
-    ]
-    res.json(users)
-})
-
-router.post('/', (req, res) => {
-    //Create
-    const dados = req.body
-    console.log(dados.nome)
-    res.json({
-        message: "Usuário criado com sucesso",
-        dados: dados
-    })
-})
-
-router.put('/', (req, res) => {
-    //Update
-    res.json({message: "Usuário atualizado com sucesso"})
-})
-
-router.delete('/', (req, res) => {
-    //Deletar
-    res.json({message: "Usuário deletado com sucesso"})
-})
+router.get('/', getUser)
+router.get('/list', listUsers)
+router.post('/', createUser)
+router.put('/', updateUser)
+router.delete('/', deleteUser)
 
 export default router
