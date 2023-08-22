@@ -6,7 +6,7 @@ const list = async () => {
 
 const create = async (user) => {
     const {name, email, pass} = user
-    return await db.query('INSERT INTO users (name, email, pass) VALUES (?,?,?)', [name, email, pass])
+    return await db.query('INSERT INTO users (name, email, pass) VALUES (?,?,?)', [name, email, pass]) //retorna se deu sucesso ou não
  }
 
 export default {list, create}
