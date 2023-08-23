@@ -1,6 +1,23 @@
-const deleteUser = (req, res) => {
+import user from "../../models/userModel.js"
+
+const deleteUser = async(req, res) => {
     //Deletar
-    res.json({message: "Usuário deletado com sucesso"})
+    try {
+        const id = req.body.id
+        const [result] = await user.remove(req.body.id)
+        if(result.affectedRows === 1){
+            res.status(200).json({
+                message: `Usuário com id:${id} deletado com sucesso`,
+            })  
+        } else {
+            res.status(404).json({
+                message: `Usuário com id:${id} não encontrado`,
+            })
+        }
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({message: "Server error"})
+    }
 }
 
 export default deleteUser
