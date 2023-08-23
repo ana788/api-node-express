@@ -1,5 +1,7 @@
 import express from "express";
 
+import createProduct from "../controllers/products/createProduct.js";
+
 const router = express.Router();
 
 router.get('/', (req, res) => { 
@@ -11,14 +13,16 @@ router.get('/', (req, res) => {
     res.json(products)
 })
 
-router.post('/', (req, res) => {
+/*router.post('/', (req, res) => {
     //Create
     const dadosProdutos = req.body
     res.json({
         message: "Produto criado com sucesso",
         dados: dadosProdutos
     })
-})
+})*/
+
+router.post('/', createProduct)
 
 router.put('/', (req, res) => {
     //Update
