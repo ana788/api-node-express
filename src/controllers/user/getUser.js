@@ -8,7 +8,7 @@ const getUser = async(req, res) => {
                 message: `Usuário não encontrado`,
             })
         } else{
-            delete rows[0].pass
+            delete rows[0].pass //para não mostrar o campo senha, que é campo sensível
             res.json(rows[0])
         }
     } catch (err) {

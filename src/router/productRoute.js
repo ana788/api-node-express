@@ -1,26 +1,11 @@
 import express from "express";
 
 import createProduct from "../controllers/products/createProduct.js";
+import getProduct from "../controllers/products/getProduct.js"
 
 const router = express.Router();
 
-router.get('/', (req, res) => { 
-    const products = [
-        {id: 1, name: "Produto 1"},
-        {id: 2, name: "Produto 2"},
-        {id: 3, name: "Produto 3"}
-    ]
-    res.json(products)
-})
-
-/*router.post('/', (req, res) => {
-    //Create
-    const dadosProdutos = req.body
-    res.json({
-        message: "Produto criado com sucesso",
-        dados: dadosProdutos
-    })
-})*/
+router.get('/', getProduct)
 
 router.post('/', createProduct)
 

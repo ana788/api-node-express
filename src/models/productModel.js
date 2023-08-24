@@ -5,5 +5,8 @@ const create = async (product) => {
     return await db.query('INSERT INTO products (name, categoria, preco, estoque) VALUES (?,?,?,?)', [name, categoria, preco, estoque]) //retorna se deu sucesso ou não
  }
 
+ const get = async (id) => {
+    return await db.query('SELECT * FROM products WHERE id = ?;', [id])
+  }
 
- export default {create}
+ export default {create, get}
