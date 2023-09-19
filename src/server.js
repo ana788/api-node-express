@@ -1,5 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 
 import {PORT} from './config.js'
 import logger from './middlewares/logger.js'
@@ -12,6 +13,7 @@ const api = express() //poderiamos usar o app também como nome da variável
 
 
 api.use(logger) //esta rodando antes de entrar em qualquer rota
+api.use(cors())
 api.use(bodyParser.json()) //middleware para converter a entrada de dados em json
 
 api.get('/', (req, res) => {

@@ -1,3 +1,3 @@
 //criar constantes de configuração
 
-export const PORT = 3000
+export const PORT = 3300
