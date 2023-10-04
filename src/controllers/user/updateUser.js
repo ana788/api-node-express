@@ -6,7 +6,7 @@ const updateUser = async (req, res) => {
         const [result] = await user.update(req.body)
         if (result.affectedRows === 1) {
             res.status(200).json({
-                sucess: `Usuário com id:${req.body.id} atualizado com sucesso`,
+                success: `Usuário com id:${req.body.id} atualizado com sucesso`,
                 user: {
                     ...req.body
                 }
@@ -20,7 +20,7 @@ const updateUser = async (req, res) => {
         console.log(err)
         res.status(500).json({ message: "Server error" })
     }
-    res.json({ message: "Usuário atualizado com sucesso" })
+    //res.json({ message: "Usuário atualizado com sucesso" })
 }
 
 export default updateUser

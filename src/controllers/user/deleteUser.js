@@ -7,7 +7,7 @@ const deleteUser = async(req, res) => {
         const [result] = await user.remove(req.body.id)
         if(result.affectedRows === 1){
             res.status(200).json({
-                sucess: `Usuário com id:${id} deletado com sucesso`,
+                success: `Usuário com id:${id} deletado com sucesso`,
             })  
         } else {
             res.status(404).json({
