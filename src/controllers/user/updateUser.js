@@ -1,9 +1,19 @@
 import user from "../../models/userModel.js"
+import zodErrorParse from '../../helpers/zodErrorParse.js'
 
 const updateUser = async (req, res) => {
     //Update
     try {
-        const [result] = await user.update(req.body)
+        const userValidated = user.validateUpdateUser(req.body)
+        if(userValidated.success === false){
+            const zodError = zodErrorParse(userValidated.error)
+            return res.status(400).json({
+                error: 'Dados inválidos',
+                fields: zodError
+            })
+        }
+
+        const [result] = await user.update(userValidated.data)
         if (result.affectedRows === 1) {
             res.status(200).json({
                 success: `Usuário com id:${req.body.id} atualizado com sucesso`,
@@ -20,7 +30,6 @@ const updateUser = async (req, res) => {
         console.log(err)
         res.status(500).json({ message: "Server error" })
     }
-    //res.json({ message: "Usuário atualizado com sucesso" })
 }
 
 export default updateUser
