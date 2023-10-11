@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Ago-2023 às 03:23
+-- Tempo de geração: 11-Out-2023 às 01:58
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.0.13
 
@@ -40,7 +40,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `categoria`, `preco`, `estoque`) VALUES
-(1, 'Garrafa Agua', 'Bebida', 3.5, 5);
+(1, 'Garrafa Agua', 'Bebida', 3.5, 5),
+(2, 'Computador', 'Eletronicos', 4.5, 12),
+(3, 'Celular', 'Eletronicos', 2, 20);
 
 -- --------------------------------------------------------
 
@@ -52,17 +54,23 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
   `email` varchar(500) NOT NULL,
-  `pass` varchar(256) NOT NULL
+  `pass` varchar(256) NOT NULL,
+  `avatar` varchar(600) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `pass`) VALUES
-(1, 'natalia', 'natalia@aluno.ifsp.com', 'senhaAlterada'),
-(3, 'gabriel', 'gabriel@gmail.com', '38833570'),
-(4, 'rafaela', 'rafaela@gmail.com', 'algumacoisa');
+INSERT INTO `users` (`id`, `name`, `email`, `pass`, `avatar`) VALUES
+(6, 'gustavo', 'gustavo@hotmail.com', '20232024', 'https://avatars.githubusercontent.com/u/8683378?v=4'),
+(9, 'agatha', 'agatha@gmail.com.br', '789456', 'https://avatars.githubusercontent.com/u/125416909?v=4'),
+(11, 'Marcus', 'marcus@gmail.com', '123456', 'https://avatars.githubusercontent.com/u/38301852?v=4'),
+(12, 'Marcus', 'marcus@gmail.com', '123456', 'https://avatars.githubusercontent.com/u/38301852?v=4'),
+(13, 'hahaah', 'hahah@gmail.com', '54545656', 'https://avatars.githubusercontent.com/u/8683378?v=4'),
+(16, 'pessoa', 'vitoria@gmail.com', '789456', 'https://avatars.githubusercontent.com/u/36730967?v=4'),
+(19, 'HO', 'vitoria@gmail.com', '789456', 'https://avatars.githubusercontent.com/u/36730967?v=4'),
+(20, 'denilson', 'desilson@gmail.com', '7452635', 'https://avatars.githubusercontent.com/u/36730967?v=4');
 
 --
 -- Índices para tabelas despejadas
@@ -88,13 +96,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
