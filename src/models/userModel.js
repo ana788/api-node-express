@@ -27,8 +27,12 @@ const userSchema = z.object({
       invalid_type_error: 'A senha deve ser uma string',
    })
    // .regex(new RegExp('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/'), {message: 'A senha deve ter no mínimo 8 caracteres, 1 letra maiúscula e 1 número'}),
-   .min(6, {message: 'A senha deve ter no mínimo 6 caracteres'})
-   .max(20, {message: 'A senha deve ter no máximo 20 caracteres'}), 
+   .min(6, { message: "A senha deve ter no mínimo 6 caracteres." })
+      .regex(new RegExp('.*[A-Z].*'), { message: "A senha deve ter no mínimo uma letra maiúscula." })
+      .regex(new RegExp('.*[a-z].*'), { message: "A senha deve ter no mínimo uma letra minúscula." })
+      .regex(new RegExp('.*[0-9].*'), { message: "A senha deve ter no mínimo um número." })
+      .regex(new RegExp('.*[`~<>?,./!@#$%^&*()\\-_+="\'|{}\\[\\];:\\\\].*'), { message: "A senha deve ter no mínimo um caractere especial." })
+      .max(20, { message: "A senha deve ter no máximo 20 caracteres." }),
 
    avatar: z.string({
       required_error: 'O avatar é obrigatório',
